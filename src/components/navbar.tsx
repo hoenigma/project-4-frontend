@@ -8,16 +8,16 @@ import "@fortawesome/fontawesome-free/css/all.css";
 //   setUser: Function;
 // }
 
-function Navbar() { 
-//   console.log("user in the navbar:", user);
+function Navbar({user, setUser}) { 
+console.log("user in the navbar:", user);
 
   const navigate = useNavigate();
 
-//   function logout() {
-//     localStorage.removeItem("token");
-//     setUser(null);
-//     navigate("/");
-//   }
+  function logout() {
+    localStorage.removeItem("token");
+    setUser(null);
+    navigate("/");
+  }
 
   return (
     <>
@@ -47,6 +47,7 @@ function Navbar() {
                     <span>About Me</span>
                   </span>
                 </Link>
+                {!user && (
                 <Link to="/signup" className="navbar-item has-text-light">
                   <span className="icon-text">
                     <span className="icon">
@@ -55,6 +56,8 @@ function Navbar() {
                     <span>Sign Up</span>
                   </span>
                 </Link>
+                )}
+                {!user && (
                 <Link to="/login" className="navbar-item has-text-light">
                   <span className="icon-text">
                     <span className="icon">
@@ -63,6 +66,15 @@ function Navbar() {
                     <span>Login</span>
                   </span>
                 </Link>
+                )}
+                {user && (
+                  <button
+                    onClick={logout}
+                    className="button logout has-text-light navbar-item is-ghost"
+                  >
+                    Logout
+                  </button>
+                )}
               </div>
             </div>
           </div>
