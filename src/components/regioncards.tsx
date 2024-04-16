@@ -2,10 +2,10 @@ import { Link, useLinkClickHandler } from "react-router-dom";
 // import { IAnimal } from "../interfaces/animal";
 import React from "react";
 
-function RegionCards() {
+function RegionCards({id, region_name, image, areas}) {
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet">
-      <Link to={`/region/${id}`}>
+      <Link to={`/regions/${id}`}>
         <div className="card">
           <div className="card-header is-justify-content-space-between p-4">
             <div className="subtitle is-6">{region_name}</div>

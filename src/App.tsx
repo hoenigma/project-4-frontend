@@ -5,7 +5,8 @@ import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Signup from "./components/signup";
 import Login from "./components/login";
-import AboutMe from "./components/aboutme"
+import AboutMe from "./components/aboutme";
+import AllRegions from "./components/showregions"
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,6 +32,7 @@ function App() {
       <Route path="/signup" element= {<Signup/>} />
       <Route path ="/login" element = {<Login fetchUser={fetchUser}/>} />
       <Route path ="/aboutme" element ={<AboutMe/>}/>
+      <Route path ="/regions" element ={<AllRegions/>}/>
     </Routes>
   </Router>
   )
