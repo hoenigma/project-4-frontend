@@ -7,6 +7,8 @@ import Signup from "./components/signup";
 import Login from "./components/login";
 import AboutMe from "./components/aboutme";
 import AllRegions from "./components/showregions"
+import OneRegion from "./components/oneregion";
+import Projects from "./components/projects";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -33,6 +35,8 @@ function App() {
       <Route path ="/login" element = {<Login fetchUser={fetchUser}/>} />
       <Route path ="/aboutme" element ={<AboutMe/>}/>
       <Route path ="/regions" element ={<AllRegions/>}/>
+      <Route path ="/region/:regionid" element ={<OneRegion/>}/>
+      <Route path ="/projects/:regionid" element ={<Projects/>}/>
     </Routes>
   </Router>
   )

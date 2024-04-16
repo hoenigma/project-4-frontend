@@ -12,7 +12,6 @@ export default function Login({ fetchUser }: { fetchUser: Function }) {
   });
 
   const [errorMessage, setErrorMessage] = React.useState("");
-  //for login just make the error a string, we dont want bad people knowing is a user exists
 
   function handleChange(e: any) {
     const fieldName = e.target.name;
@@ -23,8 +22,9 @@ export default function Login({ fetchUser }: { fetchUser: Function }) {
   }
 
   async function handleSubmit(e: SyntheticEvent) {
+    console.log("CLICKED")
+    e.preventDefault();
     try {
-      e.preventDefault();
       const resp = await axios.post(`api/login`, formData);
       localStorage.setItem("token", resp.data.token);
       console.log(resp.data);

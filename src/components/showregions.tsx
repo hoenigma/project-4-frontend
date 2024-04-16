@@ -36,21 +36,27 @@ function AllRegions() {
   function handleRegionChange(e: any) {
     setValue(e.currentTarget.value);
   }
+
   // Filter function for search and drop doen
   function filterRegions() {
     return regions?.filter((region) => {
+      const areaNames = region.areas[0].names;
+      console.log(areaNames);
+      const areaMatch = areaNames.some((areaName) =>
+        areaName.toLowerCase().includes(search.toLowerCase())
+      );
       return (
-        (search === "" ||
-          region.region_name.toLowerCase().includes(search.toLowerCase())) &&
-        (search === "" ||
-          region.areas.toLowerCase().includes(search.toLowerCase())) &&
-        (value === "" || region.region_name.includes(value))
+        search === "" ||
+        region.region_name.toLowerCase().includes(search.toLowerCase()) ||
+        (areaMatch &&
+          (value === "" || region.region_name.includes(value)))
       );
     });
   }
   console.log(regions);
 
   // TODO!!! load spinner/narwhale pic
+  // TODO!! Add an create
 
   return (
     <>
@@ -78,10 +84,10 @@ function AllRegions() {
                           onChange={handleRegionChange}
                         >
                           <option value={""}>Select type</option>
-                          <option value="SW England">SW England</option>
-                          <option value="SE England">SE England</option>
-                          <option value="NW England">NW England</option>
-                          <option value="NE England">NE England</option>
+                          <option value="South West England">SW England</option>
+                          <option value="South East England">SE England</option>
+                          <option value="North West England">NW England</option>
+                          <option value="North East England">NE England</option>
                         </select>
                       </div>
                     </div>
@@ -91,7 +97,7 @@ function AllRegions() {
             </div>
           </div>
         </div>
-         <div className="container">
+        <div className="container">
           <div className="columns is-multiline">
             {filterRegions()?.map((region) => {
               return <RegionCards key={region.id} {...region} />;
