@@ -9,12 +9,13 @@ import AboutMe from "./components/aboutme";
 import AllRegions from "./components/showregions"
 import OneRegion from "./components/oneregion";
 import Projects from "./components/projects";
+import AddProject from "./components/addproject";
 
 function App() {
   const [user, setUser] = useState(null);
   async function fetchUser() {
     const token = localStorage.getItem("token");
-    const resp = await axios.get(`api/user`, {
+    const resp = await axios.get(`http://localhost:5173/api/user`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log(resp.data);
@@ -35,8 +36,10 @@ function App() {
       <Route path ="/login" element = {<Login fetchUser={fetchUser}/>} />
       <Route path ="/aboutme" element ={<AboutMe/>}/>
       <Route path ="/regions" element ={<AllRegions/>}/>
-      <Route path ="/region/:regionid" element ={<OneRegion/>}/>
-      <Route path ="/projects/:regionid" element ={<Projects/>}/>
+      <Route path ="/region/:regionid" element ={<OneRegion user={user}/>}/>
+      <Route path ="/projects/:regionid" element ={<Projects user={user}/>}/>
+      <Route path ="/addproject/:regionid" element ={<AddProject user={user}/>}/>
+
     </Routes>
   </Router>
   )
