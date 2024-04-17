@@ -10,6 +10,7 @@ import AllRegions from "./components/showregions"
 import OneRegion from "./components/oneregion";
 import Projects from "./components/projects";
 import AddProject from "./components/addproject";
+import UpdateProject from "./components/updateprojects";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,6 +40,7 @@ function App() {
       <Route path ="/region/:regionid" element ={<OneRegion user={user}/>}/>
       <Route path ="/projects/:regionid" element ={<Projects user={user}/>}/>
       <Route path ="/addproject/:regionid" element ={<AddProject user={user}/>}/>
+      <Route path ="updateprojects/:projectid" element={<UpdateProject/>}/>
 
     </Routes>
   </Router>

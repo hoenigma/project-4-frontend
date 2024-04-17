@@ -70,15 +70,17 @@ function Projects({ user }) {
                       value={project.id}
                       className="button is-danger"
                     >
-                      Delete
+                      Delete 
                     </button>
+                    <Link to ={`/updateprojects/${project.id}`}>
                     <button
-                      onClick={deleteProject}
+            
                       value={project.id}
                       className="button is-warning"
                     >
                       Update
                     </button>
+                    </Link>
                     </div>
                   )}
                 </div>
