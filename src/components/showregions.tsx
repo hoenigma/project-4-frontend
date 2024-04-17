@@ -83,7 +83,7 @@ function AllRegions() {
                           value={value}
                           onChange={handleRegionChange}
                         >
-                          <option value={""}>Select type</option>
+                          <option value={""}>Select Region</option>
                           <option value="South West England">SW England</option>
                           <option value="South East England">SE England</option>
                           <option value="North West England">NW England</option>
