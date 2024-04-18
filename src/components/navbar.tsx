@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import { IUser } from "../interfaces/user";
 import logo from "../assests/logo.png";
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -8,28 +9,44 @@ interface NavbarProps {
   setUser: Function;
 }
 
-function Navbar({user, setUser}: NavbarProps) { 
-console.log("user in the navbar:", user);
+function Navbar({ user, setUser }: NavbarProps) {
+  console.log("user in the navbar:", user);
+  const [isActive, setIsActive]= useState(false)
 
-  const navigate = useNavigate();
+    const toggleMenu = () => {
+    setIsActive(!isActive);
+  };
 
   function logout() {
     localStorage.removeItem("token");
     setUser(null);
-    navigate("/");
   }
 
-  return (
+ return (
     <>
       <header>
-        <nav className="navbar is-primary">
+        <nav className="navbar is-info">
           <div className="container">
-            <div className="navbar-menu">
+            <div className="navbar-brand">
+              <Link to="/">
+                <img className="image is-64x64" src={logo} alt="outline of a wave" />
+              </Link>
+              <a
+                role="button"
+                className={`navbar-burger ${isActive ? "is-active" : ""}`}
+                aria-label="menu"
+                aria-expanded={isActive ? "true" : "false"}
+                onClick={toggleMenu}
+                data-target="navbarBasicExample"
+              >
+                <span aria-hidden="true" className="has-text-black"></span>
+                <span aria-hidden="true" className="has-text-black"></span>
+                <span aria-hidden="true" className="has-text-black"></span>
+              </a>
+            </div>
+            <div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
               <div className="navbar-start">
-                <Link to="/" >
-                <img className="image is-64x64" src={logo} alt="wave outline" />
-                </Link>
-                <Link to="/regions" className="navbar-item has-text-light">
+                <Link to="/regions" className="navbar-item has-text-black">
                   <span className="icon-text">
                     <span className="icon">
                       <i className="fa-solid fa-earth-europe"></i>
@@ -37,43 +54,42 @@ console.log("user in the navbar:", user);
                     <span>Regions</span>
                   </span>
                 </Link>
-              </div>
-              <div className="navbar-end">
-                <Link to="/aboutme" className="navbar-item has-text-light">
+                <Link to="/aboutme" className="navbar-item has-text-black">
                   <span className="icon-text">
                     <span className="icon">
-                      <i className="fa-solid fa-face-smile"></i>
+                      <i className="fa-regular fa-face-smile"></i>
                     </span>
                     <span>About Me</span>
                   </span>
                 </Link>
+              </div>
+              <div className="navbar-end">
                 {!user && (
-                <Link to="/signup" className="navbar-item has-text-light">
-                  <span className="icon-text">
-                    <span className="icon">
-                      <i className="fa-solid fa-right-to-bracket"></i>
+                  <Link to="/signup" className="navbar-item has-text-light">
+                    <span className="icon-text">
+                      <span className="icon">
+                        <i className="fa-solid fa-right-to-bracket"></i>
+                      </span>
+                      <span>Sign Up</span>
                     </span>
-                    <span>Sign Up</span>
-                  </span>
-                </Link>
+                  </Link>
                 )}
                 {!user && (
-                <Link to="/login" className="navbar-item has-text-light">
-                  <span className="icon-text">
-                    <span className="icon">
-                      <i className="fa-solid fa-anchor"></i>
+                  <Link to="/login" className="navbar-item has-text-black">
+                    <span className="icon-text">
+                      <span className="icon">
+                        <i className="fa-solid fa-anchor"></i>
+                      </span>
+                      <span>Login</span>
                     </span>
-                    <span>Login</span>
-                  </span>
-                </Link>
+                  </Link>
                 )}
                 {user && (
-                  <button
-                    onClick={logout}
-                    className="button logout has-text-light navbar-item is-ghost"
-                  >
-                    Logout
-                  </button>
+                  <Link to="/" className="logout navbar-item has-text-black ">
+                    <span onClick={logout}>
+                      <span>Logout</span>
+                    </span>
+                  </Link>
                 )}
               </div>
             </div>

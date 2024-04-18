@@ -2,23 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import AboutMe from "../assests/AboutMe.jpeg";
 import Signup from "../assests/Signup.png";
+import { IUser } from "../interfaces/user";
 
-function Home() {
+function Home({user}: { user: null | IUser }) {
   return (
     <section className="section home m-0">
       <section className="hero is-fullheight is-justify-content-center">
         <div className="hero-body hometext has-text-centered is-flex-grow-0 custom-border-radius is-flex-direction-column is-align-self-center">
-          <div className="is-size-1 has-text-dark title">
-            Hello
-            <p className="subtitle is-size-4 has-text-dark m-4">
-              Welcome to buddies of the ocean!<br></br>
+          
+            {user && (
+            <div className="is-size-1 has-text-dark title">
+            Hi {user?.username}!
+             </div> )}
+            <div className="is-size-1 has-text-dark title">
+              Welcome to buddies of the ocean!</div>
+              <p className="subtitle is-size-4 has-text-dark m-4">
               For all those who care about the coast and the seas of the UK,
               this app is for the shared goal of protecting and supporting our
               coasts.<br></br>
-              Have a look for links to big projects and sign up to talk about
+              Have a look for links to big projects and sign up to find or talk about your
               local projects.
             </p>
-          </div>
+         
         </div>
         <div className="columns is-flex-grow-0 custom-border-radius is-align-self-center">
           <div className="column">

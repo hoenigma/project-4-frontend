@@ -1,3 +1,16 @@
+
+.home {
+    background-image: linear-gradient(0deg,
+            rgba(0, 51, 149, 0),
+            rgba(0, 51, 149, 0)),
+        url(../assests/Background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 200px;
+}
+
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 // ? Reassign any bulma variables
