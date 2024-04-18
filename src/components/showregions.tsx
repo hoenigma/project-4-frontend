@@ -1,9 +1,12 @@
 import React from "react";
 import RegionCards from "./regioncards";
 import { Link } from "react-router-dom";
+import { IRegion } from "../interfaces/region";
+
+type Regions = null | Array<IRegion>
 
 function AllRegions() {
-  const [regions, setRegions] = React.useState(null);
+  const [regions, setRegions] = React.useState<Regions>(null);
   const [search, setSearch] = React.useState("");
   const [value, setValue] = React.useState("");
 

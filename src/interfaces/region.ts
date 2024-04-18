@@ -4,10 +4,18 @@ export interface IRegion{
     region_name: string,
     info: string,
     image: string,
-    // areas:
-    // links:
-    // threats:
-    // wildlife:
-    // projects:
+areas: {
+        names: string[];
+        images: string[];
+    }[];
+    links: {
+        links: string[];
+    }[];
+    threats: {
+        threats: string[];
+    }[];
+    wildlife: {
+        wildlife: string[];
+    }[];
 
 }

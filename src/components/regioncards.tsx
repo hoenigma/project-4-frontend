@@ -1,8 +1,9 @@
 import { Link, useLinkClickHandler } from "react-router-dom";
 // import { IAnimal } from "../interfaces/animal";
 import React from "react";
+import { IRegion } from "../interfaces/region";
 
-function RegionCards({id, country, region_name, image, areas}) {
+function RegionCards({id, country, region_name, image, areas}: IRegion) {
 
 // Access areas in the model
 if (Array.isArray(areas) && areas.length > 0) {

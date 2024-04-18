@@ -1,14 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
-// import { IUser } from "../interfaces/user";
+import { IUser } from "../interfaces/user";
 import logo from "../assests/logo.png";
 import "@fortawesome/fontawesome-free/css/all.css";
 
-// interface NavbarProps {
-//   user: null | IUser;
-//   setUser: Function;
-// }
+interface NavbarProps {
+  user: null | IUser;
+  setUser: Function;
+}
 
-function Navbar({user, setUser}) { 
+function Navbar({user, setUser}: NavbarProps) { 
 console.log("user in the navbar:", user);
 
   const navigate = useNavigate();

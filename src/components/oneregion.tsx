@@ -4,10 +4,12 @@ import { IoIosInformationCircle } from "react-icons/io"
 import { GiPlantsAndAnimals } from "react-icons/gi";
 import { GiPoisonBottle } from "react-icons/gi";
 import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
+import { IUser } from "../interfaces/user";
+import { IRegion } from "../interfaces/region";
 import axios from "axios";
 
-function OneRegion({user}) {
-  const [region, updateRegion] = React.useState(null);
+function OneRegion({user}: { user: null | IUser }) {
+  const [region, updateRegion] = React.useState<IRegion | null>(null);
   const { regionid } = useParams();
   const navigate = useNavigate();
   console.log(regionid)

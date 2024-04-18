@@ -1,13 +1,18 @@
 import React from "react";
 import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { IUser } from "../interfaces/user"
+import { IProject } from "../interfaces/project";
 
-function Projects({ user }) {
+type Projects = null | Array<IProject>;
+
+
+function Projects({ user }: { user: null | IUser }) {
   const { regionid } = useParams();
   const navigate = useNavigate();
   console.log(regionid);
 
-  const [projects, setProjects] = React.useState(null);
+  const [projects, setProjects] = React.useState<Projects>(null);
   React.useEffect(() => {
     async function fetchProjects() {
       const resp = await axios.get(
