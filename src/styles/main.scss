@@ -1,20 +1,66 @@
+.background {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 51, 149, 0),
+      rgba(0, 51, 149, 0)
+    ),
+    url(../assests/Background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 200px;
+}
 
-.home {
+.backgroundTwo {
     background-image: linear-gradient(0deg,
             rgba(0, 51, 149, 0),
             rgba(0, 51, 149, 0)),
-        url(../assests/Background.jpeg);
+        url(../assests/background2.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     margin: 200px;
 }
 
+span.logout {
+  cursor: pointer;
+}
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+.button {
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.card.region {
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.card.region:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.searchbar {
+  margin-left: 120px;
+}
+
+@media screen and (max-width: 600px) {
+  .searchbar {
+    margin-left: 0;
+  }
+}
+
+// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 // ? Reassign any bulma variables
-$family-sans-serif: "Roboto", sans-serif;
+// $family-sans-serif: "Roboto", sans-serif;
 
 // ! example on how to customize, skip to section "Add your own Bulma styles":
 // https://bulma.io/documentation/customize/with-sass-cli/

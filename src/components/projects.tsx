@@ -42,14 +42,15 @@ function Projects({ user }: { user: null | IUser }) {
   }
 
   return (
+     <section className="section backgroundTwo m-0">
     <div className="container">
       <div className="level">
         <div className="level-left">
           <h1 className="title">Projects</h1>
         </div>
         <div className="level-right">
-          <Link to={`/addproject/${regionid}`} className="button is-primary">
-            Add Project
+          <Link to={`/addproject/${regionid}`}>
+            <button className="button">Add Project</button>
           </Link>
         </div>
       </div>
@@ -73,7 +74,7 @@ function Projects({ user }: { user: null | IUser }) {
                     <button
                       onClick={deleteProject}
                       value={project.id}
-                      className="button is-danger"
+                      className="button is-danger mr-3"
                     >
                       Delete 
                     </button>
@@ -94,6 +95,7 @@ function Projects({ user }: { user: null | IUser }) {
           ))}
       </div>
     </div>
+    </section>
   );
 }
 

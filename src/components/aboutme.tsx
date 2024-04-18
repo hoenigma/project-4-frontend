@@ -5,6 +5,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 function AboutMe() {
   return (
     <>
+    <section className="section background m-0">
       <div className="section hero is-flex is-fullheight is-flex-direction-row">
         <div className="container comment is-max-desktop custom-border-radius p-6">
           <div className="card">
@@ -23,7 +24,7 @@ function AboutMe() {
               <div className="content">
                 Hello! My name is Matthew Hoenig, I created this app as one of
                 my projects during my course at General Assembly. <br />
-                This app was created using a pyhton FLask API and a React front
+                This app was created using a pyhton Flask API and a React front
                 end. <br />
                 As someone who studied Oceanogrpahy at university and has a
                 passion for the Ocean I thought to create an app for people to
@@ -34,7 +35,7 @@ function AboutMe() {
               {/* LinkedIn and GitHub links */}
               <div className="is-inline-block">
                 <a
-                  href="https://www.linkedin.com/in/your-linkedin-profile"
+                  href="https://www.linkedin.com/in/hoenigma"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -43,7 +44,7 @@ function AboutMe() {
               </div>
               <div className="is-inline-block">
                 <a
-                  href="https://github.com/your-github-profile"
+                  href="https://github.com/hoenigma"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -54,6 +55,7 @@ function AboutMe() {
           </div>
         </div>
       </div>
+      </section>
     </>
   );
 }

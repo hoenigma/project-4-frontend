@@ -65,7 +65,7 @@ function Navbar({ user, setUser }: NavbarProps) {
               </div>
               <div className="navbar-end">
                 {!user && (
-                  <Link to="/signup" className="navbar-item has-text-light">
+                  <Link to="/signup" className="navbar-item has-text-black">
                     <span className="icon-text">
                       <span className="icon">
                         <i className="fa-solid fa-right-to-bracket"></i>

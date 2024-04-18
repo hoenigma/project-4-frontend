@@ -57,7 +57,9 @@ export default function UpdateProject() {
     navigate(`/projects/${formData.region_id}`);
   }
   return (
-    <div className="container">
+  <section className="section background m-0">
+    <div className="container login is-flex-grow-0 add is-max-desktop custom-border-radius p-6">
+      <div className="box mt-6">
       <h1 className="title">Update Project</h1>
       <form onSubmit={handleSubmit}>
         <div className="field">
@@ -126,10 +128,14 @@ export default function UpdateProject() {
 
         <div className="field">
           <div className="control">
-            <button className="button is-primary">Submit</button>
-          </div>
+              <div className="is-flex is-justify-content-center">
+                <button className="button">Submit</button>
+                </div>
+              </div>
         </div>
       </form>
     </div>
+    </div>
+    </section>
   );
 }

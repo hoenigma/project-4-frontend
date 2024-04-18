@@ -3,7 +3,7 @@ import RegionCards from "./regioncards";
 import { Link } from "react-router-dom";
 import { IRegion } from "../interfaces/region";
 
-type Regions = null | Array<IRegion>
+type Regions = null | Array<IRegion>;
 
 function AllRegions() {
   const [regions, setRegions] = React.useState<Regions>(null);
@@ -51,8 +51,7 @@ function AllRegions() {
       return (
         search === "" ||
         region.region_name.toLowerCase().includes(search.toLowerCase()) ||
-        (areaMatch &&
-          (value === "" || region.region_name.includes(value)))
+        (areaMatch && (value === "" || region.region_name.includes(value)))
       );
     });
   }
@@ -62,36 +61,45 @@ function AllRegions() {
   // TODO!! Add an create
 
   return (
-    <>
-      <section className="section is-flex is-flex-direction-column">
-        <div className="columns is-multicolumn">
-          <div className="container is-widescreen">
-            <div className=" searchbar column is-half is-pulled-left ">
-              <input
-                id="searchBar"
-                className="input is-normal"
-                placeholder="Search"
-                onChange={handleChange}
-                value={search}
-              />
-            </div>
-            <div className="field column is one-quarter">
-              <div className="dropdown is-active">
-                <div className="dropdown-trigger">
-                  <div className="dropdown is-active">
-                    <div className="dropdown-trigger">
-                      <div className="select is-hovered">
-                        <select
-                          name="type"
-                          value={value}
-                          onChange={handleRegionChange}
-                        >
-                          <option value={""}>Select Region</option>
-                          <option value="South West England">SW England</option>
-                          <option value="South East England">SE England</option>
-                          <option value="North West England">NW England</option>
-                          <option value="North East England">NE England</option>
-                        </select>
+      <section className="section backgroundTwo m-0">
+        <section className="section is-flex is-flex-direction-column">
+          <div className="columns is-multicolumn">
+            <div className="container is-widescreen">
+              <div className=" searchbar column is-half is-pulled-left">
+                <input
+                  id="searchBar"
+                  className="input is-normal"
+                  placeholder="Search"
+                  onChange={handleChange}
+                  value={search}
+                />
+              </div>
+              <div className="field column is one-quarter">
+                <div className="dropdown is-active">
+                  <div className="dropdown-trigger">
+                    <div className="dropdown is-active">
+                      <div className="dropdown-trigger">
+                        <div className="select is-hovered">
+                          <select
+                            name="type"
+                            value={value}
+                            onChange={handleRegionChange}
+                          >
+                            <option value={""}>Select Region</option>
+                            <option value="South West England">
+                              SW England
+                            </option>
+                            <option value="South East England">
+                              SE England
+                            </option>
+                            <option value="North West England">
+                              NW England
+                            </option>
+                            <option value="North East England">
+                              NE England
+                            </option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -99,16 +107,15 @@ function AllRegions() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="columns is-multiline">
-            {filterRegions()?.map((region) => {
-              return <RegionCards key={region.id} {...region} />;
-            })}
+          <div className="container">
+            <div className="columns is-multiline">
+              {filterRegions()?.map((region) => {
+                return <RegionCards key={region.id} {...region} />;
+              })}
+            </div>
           </div>
-        </div>
+        </section>
       </section>
-    </>
   );
 }
 export default AllRegions;

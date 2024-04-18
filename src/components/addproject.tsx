@@ -59,8 +59,11 @@ export default function AddProject({}) {
     }
   }
   return (
-    <div className="container">
-      <h1 className="title">Add Project</h1>
+    <section className="section background m-0">
+    <div className="container login is-flex-grow-0 add is-max-desktop custom-border-radius p-6">
+      <div className="box mt-6">
+        <div className="title is-size-3 has-text-centered pl-1 mb-5">Add Project</div>
+      
       <form onSubmit={handleSubmit}>
         <div className="field">
           <label className="label">Name of Project</label>
@@ -68,6 +71,7 @@ export default function AddProject({}) {
             <input
               className="input"
               type="text"
+              placeholder="What is your project?"
               name="name_of_project"
               value={formData.name_of_project}
               onChange={handleChange}
@@ -85,6 +89,7 @@ export default function AddProject({}) {
               className="input"
               type="text"
               name="area_of_project"
+              placeholder="Where is it? Beach or town the project is in..."
               value={formData.area_of_project}
               onChange={handleChange}
             />
@@ -101,6 +106,7 @@ export default function AddProject({}) {
               className="input"
               type="text"
               name="date_time"
+              placeholder="When is it?"
               value={formData.date_time}
               onChange={handleChange}
             />
@@ -116,6 +122,7 @@ export default function AddProject({}) {
             <textarea
               className="textarea"
               name="description"
+              placeholder="Briefly explain what the project is..."
               value={formData.description}
               onChange={handleChange}
             ></textarea>
@@ -132,6 +139,7 @@ export default function AddProject({}) {
               className="input"
               type="text"
               name="links"
+              placeholder="Link to the project (optional)... "
               value={formData.links}
               onChange={handleChange}
             />
@@ -142,11 +150,14 @@ export default function AddProject({}) {
         </div>
 
         <div className="field">
-          <div className="control">
-            <button className="button is-primary">Submit</button>
-          </div>
+              <div className="is-flex is-justify-content-center">
+                <button className="button">Submit</button>
+              </div>
         </div>
+      
       </form>
+      </div>
     </div>
+    </section>
   );
 }
