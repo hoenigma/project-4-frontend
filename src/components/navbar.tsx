@@ -85,6 +85,16 @@ function Navbar({ user, setUser }: NavbarProps) {
                   </Link>
                 )}
                 {user && (
+                  <Link to="/user" className="navbar-item has-text-black">
+                    <span className="icon-text">
+                      <span className="icon">
+                        <i className="fa-solid fa-user"></i>
+                      </span>
+                      <span>User</span>
+                    </span>
+                  </Link>
+                )}
+                {user && (
                   <Link to="/" className="logout navbar-item has-text-black ">
                     <span onClick={logout}>
                       <span>Logout</span>

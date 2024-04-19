@@ -57,7 +57,18 @@ function OneRegion({ user }: { user: null | IUser }) {
           </Link>
         )}
 
-        {/* Cards for the areas */}
+
+        {/* Sections for General Information, Wildlife, Threats, and Links */}
+        <section className="section">
+          <div className="box">
+          <h2 className="title is-2">
+            <IoIosInformationCircle className="mr-2" /> General Information
+          </h2>
+          <p>{region?.info}</p>
+          </div>
+        </section>
+
+                {/* Cards for the areas */}
         <h1 className="title is-2">Areas Include:</h1>
         <div className="columns is-multiline">
           {region?.areas[0]?.names.map((name, index) => (
@@ -79,17 +90,9 @@ function OneRegion({ user }: { user: null | IUser }) {
             </div>
           ))}
         </div>
-        {/* Sections for General Information, Wildlife, Threats, and Links */}
-        <section className="section">
-          <div className="box">
-          <h2 className="title is-2">
-            <IoIosInformationCircle className="mr-2" /> General Information
-          </h2>
-          <p>{region?.info}</p>
-          </div>
-        </section>
 
         <div className="section is-flex is-justify-content-space-between">
+          <div className="is-hidden-touch">
           <div className="box">
             <h2 className="title is-2">
               <div style ={{width:"200px"}}>
@@ -98,6 +101,7 @@ function OneRegion({ user }: { user: null | IUser }) {
                 </div>
               </div>
             </h2>
+            
 
             <ul>
               {region?.wildlife[0]?.wildlife.map((wildlife, index) => (
@@ -105,8 +109,9 @@ function OneRegion({ user }: { user: null | IUser }) {
               ))}
             </ul>
           </div>
+          </div>
 
-          <div className="mx-6">
+          <div className="mx-6 is-hidden-touch">
             <div className="box">
             <h2 className="title is-2">
               <div className="is-flex is-align-items-center">
