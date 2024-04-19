@@ -7,6 +7,7 @@ import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import { IUser } from "../interfaces/user";
 import { IRegion } from "../interfaces/region";
 import axios from "axios";
+import { baseUrl } from "../config";
 
 function OneRegion({ user }: { user: null | IUser }) {
   const [region, updateRegion] = React.useState<IRegion | null>(null);
@@ -16,7 +17,7 @@ function OneRegion({ user }: { user: null | IUser }) {
 
   React.useEffect(() => {
     async function fetchRegion() {
-      const resp = await fetch(`/api/region/${regionid}`);
+      const resp = await fetch(`${baseUrl}/region/${regionid}`);
       const regionDataText = await resp.text();
       console.log(regionDataText);
       const regionData = JSON.parse(regionDataText);

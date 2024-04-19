@@ -2,6 +2,7 @@ import React from "react";
 import RegionCards from "./regioncards";
 import { Link } from "react-router-dom";
 import { IRegion } from "../interfaces/region";
+import { baseUrl } from "../config";
 
 type Regions = null | Array<IRegion>;
 
@@ -13,7 +14,7 @@ function AllRegions() {
   //   Fetch the region data
   React.useEffect(() => {
     async function fetchRegions() {
-      const resp = await fetch(`api/regions`);
+      const resp = await fetch(`${baseUrl}/regions`);
       const data = await resp.json();
       // console.log(data);
       setRegions(data);
@@ -24,7 +25,7 @@ function AllRegions() {
   //   Fetch the region for drop down, do I need this?
   React.useEffect(() => {
     async function fetchRegion() {
-      const resp = await fetch(`api/regions?region=${value}`);
+      const resp = await fetch(`${baseUrl}/regions?region=${value}`);
       const regionData = await resp.json();
       setRegions(regionData);
     }

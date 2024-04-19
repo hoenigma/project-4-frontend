@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { baseUrl } from "../config";
 
 export default function AddProject({}) {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ export default function AddProject({}) {
       const token = localStorage.getItem("token");
       console.log(token);
       console.log(formData);
-      const resp = await axios.post(`/api/projects/add/${regionid}`, formData, {
+      const resp = await axios.post(`${baseUrl}/projects/add/${regionid}`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("resp", resp.data);

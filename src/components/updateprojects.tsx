@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useState } from "react";
 import axios, { formToJSON } from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { baseUrl } from "../config"; 
 
 export default function UpdateProject() {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function UpdateProject() {
     React.useEffect(() => {
     async function fetchProjects() {
       const resp = await fetch(
-        `/api/project/${projectid}`
+        `${baseUrl}/project/${projectid}`
       );
       console.log("resp.data is", resp);
       const data = await resp.json();
@@ -47,7 +48,7 @@ export default function UpdateProject() {
     console.log(token);
     console.log("regionID",formData.region_id)
     const resp = await axios.put(
-      `/api/updateprojects/${projectid}`,
+      `${baseUrl}/updateprojects/${projectid}`,
       formData,
       {
         headers: { Authorization: `Bearer ${token}` },

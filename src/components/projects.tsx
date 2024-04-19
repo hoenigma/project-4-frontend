@@ -3,6 +3,7 @@ import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { IUser } from "../interfaces/user"
 import { IProject } from "../interfaces/project";
+import { baseUrl } from "../config";
 
 type Projects = null | Array<IProject>;
 
@@ -16,7 +17,7 @@ function Projects({ user }: { user: null | IUser }) {
   React.useEffect(() => {
     async function fetchProjects() {
       const resp = await axios.get(
-        `/api/projects/${regionid}`
+        `${baseUrl}/projects/${regionid}`
       );
       console.log(resp);
 
@@ -32,7 +33,7 @@ function Projects({ user }: { user: null | IUser }) {
       const token = localStorage.getItem("token");
       const projectId = e.currentTarget.value;
       console.log(projectId);
-      await axios.delete(`/api/projects/` + projectId, {
+      await axios.delete(`${baseUrl}/projects/` + projectId, {
         headers: { Authorization: `Bearer ${token}` },
       });
       location.reload();

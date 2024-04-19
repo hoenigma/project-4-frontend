@@ -11,12 +11,13 @@ import OneRegion from "./components/oneregion";
 import Projects from "./components/projects";
 import AddProject from "./components/addproject";
 import UpdateProject from "./components/updateprojects";
+import { baseUrl } from "./config"
 
 function App() {
   const [user, setUser] = useState(null);
   async function fetchUser() {
     const token = localStorage.getItem("token");
-    const resp = await axios.get(`http://localhost:5173/api/user`, {
+    const resp = await axios.get(`${baseUrl}/user`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log(resp.data);
