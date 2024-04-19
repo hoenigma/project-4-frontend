@@ -12,7 +12,7 @@ import Projects from "./components/projects";
 import AddProject from "./components/addproject";
 import UpdateProject from "./components/updateprojects";
 import UserPage from "./components/userpage";
-import Footer from "./components/Footer";
+import Footer from "./components/footer";
 import { baseUrl } from "./config"
 
 function App() {
