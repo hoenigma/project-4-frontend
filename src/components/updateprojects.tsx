@@ -22,7 +22,7 @@ export default function UpdateProject() {
     React.useEffect(() => {
     async function fetchProjects() {
       const resp = await fetch(
-        `http://localhost:5173/api/project/${projectid}`
+        `/api/project/${projectid}`
       );
       console.log("resp.data is", resp);
       const data = await resp.json();
@@ -47,7 +47,7 @@ export default function UpdateProject() {
     console.log(token);
     console.log("regionID",formData.region_id)
     const resp = await axios.put(
-      `http://localhost:5173/api/updateprojects/${projectid}`,
+      `/api/updateprojects/${projectid}`,
       formData,
       {
         headers: { Authorization: `Bearer ${token}` },

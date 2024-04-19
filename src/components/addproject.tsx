@@ -42,7 +42,7 @@ export default function AddProject({}) {
       const token = localStorage.getItem("token");
       console.log(token);
       console.log(formData);
-      const resp = await axios.post(`http://localhost:5173/api/projects/add/${regionid}`, formData, {
+      const resp = await axios.post(`/api/projects/add/${regionid}`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("resp", resp.data);

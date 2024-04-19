@@ -16,7 +16,7 @@ function Projects({ user }: { user: null | IUser }) {
   React.useEffect(() => {
     async function fetchProjects() {
       const resp = await axios.get(
-        `http://localhost:5173/api/projects/${regionid}`
+        `/api/projects/${regionid}`
       );
       console.log(resp);
 
@@ -32,7 +32,7 @@ function Projects({ user }: { user: null | IUser }) {
       const token = localStorage.getItem("token");
       const projectId = e.currentTarget.value;
       console.log(projectId);
-      await axios.delete(`http://localhost:5173/api/projects/` + projectId, {
+      await axios.delete(`/api/projects/` + projectId, {
         headers: { Authorization: `Bearer ${token}` },
       });
       location.reload();
