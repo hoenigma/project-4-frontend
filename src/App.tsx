@@ -38,7 +38,7 @@ function App() {
       <Route path="/" element={<Home user={user}/>} />
       <Route path="/signup" element= {<Signup/>} />
       <Route path ="/login" element = {<Login fetchUser={fetchUser}/>} />
-      <Route path ="/aboutme" element ={<AboutMe/>}/>
+      <Route path ="/aboutme" element ={<AboutMe user={user}/>}/>
       <Route path ="/regions" element ={<AllRegions/>}/>
       <Route path ="/region/:regionid" element ={<OneRegion user={user}/>}/>
       <Route path ="/projects/:regionid" element ={<Projects user={user}/>}/>
