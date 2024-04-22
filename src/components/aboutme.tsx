@@ -48,11 +48,11 @@ function AboutMe({ user }: { user: null | IUser }) {
   return (
     <>
       <section className="section background m-0">
-        <div className="section hero is-flex is-fullheight is-flex-direction-row">
-          <div className="container is-max-desktop is-flex is-justify-content-space-between">
-            <div className="card comment custom-border-radius p-6 mr-4">
-              <header className="card-header">
-                <p className="card-header-title">About Me!</p>
+        <div className="section hero is-flex is-fullheight">
+          <div className="container is-max-desktop is-flex is-justify-content-space-between is-flex-direction-column">
+            <div className="card custom-border-radius p-6 mr-4">
+              <header className="card-header title">
+                <p className="card-header-title ">About Me!</p>
               </header>
               <div className="card-image">
                 <figure className="image is-4by3">
@@ -64,15 +64,15 @@ function AboutMe({ user }: { user: null | IUser }) {
               </div>
               <div className="card-content">
                 <div className="content">
-                  Hello! My name is Matthew Hoenig, I created this app as one of
-                  my projects during my course at General Assembly. <br />
+                  <p>Hello! My name is Matthew Hoenig, I created this app as one of
+                  my projects during my course at General Assembly. 
                   This app was created using a pyhton Flask API and a React
-                  front end. <br />
-                  As someone who studied Oceanogrpahy at university and has a
+                  front end. <br /></p>
+                  <p>As someone who studied Oceanogrpahy at university and has a
                   passion for the Ocean I thought to create an app for people to
                   see our rich regions of the coast and share projects they are
                   doing to protect them.
-                  <br />
+                  </p>
                 </div>
                 {/* LinkedIn and GitHub links */}
                 <div className="is-inline-block">
@@ -97,9 +97,9 @@ function AboutMe({ user }: { user: null | IUser }) {
             </div>
 
             {user && (
-              <div className="card comment custom-border-radius p-6" style={{ width: "100%" }}>
-                <header className="card-header">
-                  <p className="card-header-title">Send a Question</p>
+              <div className="card comment question custom-border-radius p-6" style={{ width: "100%", height: "75%" }}>
+                <header className="card-header title">
+                  <p className="card-header-title has-text-centered">Got a Question?</p>
                 </header>
                 <div className="card-content">
                   <form onSubmit={handleSubmit}>
@@ -143,9 +143,11 @@ function AboutMe({ user }: { user: null | IUser }) {
                     </div>
                     <div className="field">
                       <div className="control">
+                        <div className="is-flex is-justify-content-center">
                         <button className="button" type="submit">
                           Submit
                         </button>
+                        </div>
                       </div>
                     </div>
                   </form>

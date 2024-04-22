@@ -59,7 +59,7 @@ function OneRegion({ user }: { user: null | IUser }) {
 
 
         {/* Sections for General Information, Wildlife, Threats, and Links */}
-        <section className="section">
+        <section className="section phone">
           <div className="box">
           <h2 className="title is-2">
             <IoIosInformationCircle className="mr-2" /> General Information
@@ -91,7 +91,7 @@ function OneRegion({ user }: { user: null | IUser }) {
           ))}
         </div>
 
-        <div className="section is-flex is-justify-content-space-between">
+        <div className="section is-flex is-justify-content-space-between phone">
           <div className="is-hidden-touch">
           <div className="box">
             <h2 className="title is-2">
@@ -126,7 +126,7 @@ function OneRegion({ user }: { user: null | IUser }) {
           </div>
           </div>
 
-          <div>
+          <div className="links">
             <div className="box">
             <h2 className="title is-2">
               <div className="is-flex is-align-items-center">

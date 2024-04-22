@@ -58,7 +58,7 @@ export default function UpdateProject() {
     navigate(`/projects/${formData.region_id}`);
   }
   return (
-  <section className="section background m-0">
+  <section className="section backgroundTwo m-0">
     <div className="container login is-flex-grow-0 add is-max-desktop custom-border-radius p-6">
       <div className="box mt-6">
       <h1 className="title">Update Project</h1>

@@ -134,7 +134,7 @@ export default function AddProject({}) {
         </div>
 
         <div className="field">
-          <label className="label">Links</label>
+          <label className="label">Link to Project/Contact</label>
           <div className="control">
             <input
               className="input"

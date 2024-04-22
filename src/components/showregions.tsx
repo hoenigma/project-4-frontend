@@ -22,7 +22,7 @@ function AllRegions() {
     fetchRegions();
   }, []);
 
-  //   Fetch the region for drop down, do I need this?
+  //   Fetch the region for drop down
   React.useEffect(() => {
     async function fetchRegion() {
       const resp = await fetch(`${baseUrl}/regions?region=${value}`);

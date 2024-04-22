@@ -61,6 +61,30 @@ footer.footer{
   background-color: #3E8FD1
 }
 
+.card.comment{
+  margin-top: 120px;
+  background-color: #2cb0a4;
+}
+
+.card-header.title{
+  background-color: white;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .section.phone {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .links {
+    height: 365px;
+    width: 366px;
+  }
+}
+
+
 // @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
