@@ -8,7 +8,7 @@ function RegionCards({ id, country, region_name, image, areas }: IRegion) {
   if (Array.isArray(areas) && areas.length > 0) {
     const areaNames = areas[0].names; // Assuming the 'names' property exists in each area object
 
-    console.log("The areas are", areaNames.length);
+    // console.log("The areas are", areaNames.length);
   }
 
   return (
@@ -21,8 +21,7 @@ function RegionCards({ id, country, region_name, image, areas }: IRegion) {
           <figure className="image is-1by1">
             <img src={image} alt={region_name} />
           </figure>
-          <div className="columns is-flex-grow-0 ">
-            <div className="column">
+
               <div className="card-content p-4">
                 <div className="is-flex is-flex-direction-column">
                   <p className="has-text-weight-bold is-size-6">
@@ -34,8 +33,7 @@ function RegionCards({ id, country, region_name, image, areas }: IRegion) {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+
       </Link>
     </div>
   );
