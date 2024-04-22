@@ -44,7 +44,7 @@ function App() {
       <Route path ="/projects/:regionid" element ={<Projects user={user}/>}/>
       <Route path ="/addproject/:regionid" element ={<AddProject />}/>
       <Route path ="/updateprojects/:projectid" element={<UpdateProject/>}/>
-      <Route path="/user" element ={<UserPage/>}/>
+      <Route path="/user" element ={<UserPage user={user} setUser={setUser}/>}/>
     </Routes>
     <Footer />
   </Router>

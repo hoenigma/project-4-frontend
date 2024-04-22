@@ -8,7 +8,6 @@ function Home({ user }: { user: null | IUser }) {
   return (
     <section className="section background m-0">
       <section className="hero is-fullheight is-justify-content-center">
-        
         <div className="hero-body hometext has-text-centered is-flex-grow-0 custom-border-radius is-flex-direction-column is-align-self-center">
           {user && (
             <div className="is-size-1 has-text-dark title has-text-weight-bold">
@@ -81,30 +80,55 @@ function Home({ user }: { user: null | IUser }) {
               </Link>
             </div>
           </div>
-          <div className="column">
-            <div className="card">
-              <Link to="/signup">
-                <div className="card-image">
-                  <figure className="image is-4by3">
-                    <img src={Signup} alt="Circle with a person in" />
-                  </figure>
-                </div>
-                <div className="card-content">
-                  <div className="media">
-                    <div className="media-content">
-                      <p className="title is-4">Sign up</p>
+          {!user && (
+            <div className="column">
+              <div className="card">
+                <Link to="/signup">
+                  <div className="card-image">
+                    <figure className="image is-4by3">
+                      <img src={Signup} alt="Circle with a person in" />
+                    </figure>
+                  </div>
+                  <div className="card-content">
+                    <div className="media">
+                      <div className="media-content">
+                        <p className="title is-4">Sign up</p>
+                      </div>
+                    </div>
+                    <div className="content">
+                      Find and post local projects and talk about your favourite
+                      coast!
+                      <br />
                     </div>
                   </div>
-
-                  <div className="content">
-                    Find and post
-                    local projects and talk about your favourite coast!
-                    <br />
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
+          {user && (
+            <div className="column">
+              <div className="card">
+                <Link to="/user">
+                  <div className="card-image">
+                    <figure className="image is-4by3">
+                      <img src={Signup} alt="Circle with a person in" />
+                    </figure>
+                  </div>
+                  <div className="card-content">
+                    <div className="media">
+                      <div className="media-content">
+                        <p className="title is-4">Your Page</p>
+                      </div>
+                    </div>
+                    <div className="content">
+                      Update your details or remove your account.
+                      <br />
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </section>

@@ -46,7 +46,7 @@ function OneRegion({ user }: { user: null | IUser }) {
     <section className="section backgroundTwo m-0">
       <div className="container">
         {/* Title for Region Name */}
-        <h1 className="title is-1">{region?.region_name}</h1>
+        <h1 className="title is-1 has-text-weight-bold">{region?.region_name}</h1>
 
         {region && user && (
           <Link to={`/projects/${regionid}`}>

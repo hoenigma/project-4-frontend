@@ -70,7 +70,7 @@ function AllRegions() {
 
   return (
     <>
-    <section className="section backgroundTwo m-0">
+    <section className="section backgroundTwo m-0" style={{ height: "100vh" }}>
       
         <div className="columns is-multicolumn">
           <div className="container is-widescreen">

@@ -4,16 +4,20 @@ import { IUser } from "../interfaces/user";
 import { Link, useParams, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function UserPage() {
-  const [user, setUser] = React.useState<IUser | null>(null);
+interface NavbarProps {
+  user: null | IUser;
+  setUser: Function;
+}
+
+function UserPage({ user, setUser }: NavbarProps) {
   const navigate = useNavigate();
 
   React.useEffect(() => {
     async function fetchUser() {
-        const token = localStorage.getItem("token");
+      const token = localStorage.getItem("token");
       const resp = await fetch(`${baseUrl}/user`, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        headers: { Authorization: `Bearer ${token}` },
+      });
       const userDataText = await resp.text();
       console.log(userDataText);
       const userData = JSON.parse(userDataText);
@@ -56,48 +60,68 @@ function UserPage() {
     try {
       const token = localStorage.getItem("token");
       console.log(token);
+      localStorage.removeItem("token");
+      setUser(null);
+
+      navigate("/");
+
       await axios.delete(`api/user`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      navigate("/");
     } catch (e: any) {
       console.log(e.response.data);
     }
   }
 
   return (
-    <div>
-      <h1>User Profile</h1>
-      <p>Username: {user?.username}</p>
-      <input
-        type="text"
-        value={user?.username}
-        onChange={(e) => handleUpdate("username", e.target.value)}
-      />
+    <section className="section background m-0" style={{ height: "100vh" }}>
+      <div className="box user">
+        <h1 className="title">User Profile</h1>
+        <div>
+          <div>
+        <p className="subtitle mb-0 has-text-weight-bold">Current Username: {user?.username}</p>
+        <p> Change Username: </p>
+        <input className = "mb-3"
+          type="text"
+          value={user?.username}
+          onChange={(e) => handleUpdate("username", e.target.value)}
+        />
+        </div>
 
-      <p>Email: {user?.email}</p>
-      <input
-        type="text"
-        value={user?.email}
-        onChange={(e) => handleUpdate("email", e.target.value)}
-      />
+        <div>
+        <p className="subtitle mb-0 has-text-weight-bold">Current Name: {user?.name}</p>
+        <p>Change Name:</p>
+        <input className = "mb-3"
+          type="text"
+          value={user?.name}
+          onChange={(e) => handleUpdate("name", e.target.value)}
+        />
+        </div>
 
-      <p>Name: {user?.name}</p>
-      <input
-        type="text"
-        value={user?.name}
-        onChange={(e) => handleUpdate("name", e.target.value)}
-      />
+        <div>
+        <p className="subtitle mb-0 has-text-weight-bold">Current Email: {user?.email}</p>
+        <p>Change Email:</p>
+        <input
+          type="text"
+          value={user?.email}
+          onChange={(e) => handleUpdate("email", e.target.value)}
+        />
+         </div>
 
-      {/* <p>Password: {user?.password}</p>
+        {/* <p>Password: {user?.password}</p>
       <input
         type="password"
         value={user?.password}
         onChange={(e) => handleUpdate("password", e.target.value)}
       /> */}
-
-      <button onClick={deleteUser}>Delete User</button>
-    </div>
+        <div>
+          <button onClick={deleteUser} className="button is-danger mt-3">
+            Delete
+          </button>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
