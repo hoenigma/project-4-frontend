@@ -16,7 +16,7 @@ function AllRegions() {
     async function fetchRegions() {
       const resp = await fetch(`${baseUrl}/regions`);
       const data = await resp.json();
-      // console.log(data);
+      console.log(data);
       setRegions(data);
     }
     fetchRegions();
@@ -28,7 +28,7 @@ function AllRegions() {
       const resp = await fetch(`${baseUrl}/regions?region_name=${value}`);
       const regionData = await resp.json();
       setRegions(regionData);
-      console.log(regions);
+      // console.log(regions);
     }
     fetchRegion();
   }, [value]);
