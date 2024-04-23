@@ -73,6 +73,10 @@ function UserPage({ user, setUser }: NavbarProps) {
     }
   }
 
+  function updateUser(){
+    location.reload()
+  }
+
   return (
     <section className="section background m-0" style={{ height: "100vh" }}>
       <div className="box user">
@@ -117,6 +121,11 @@ function UserPage({ user, setUser }: NavbarProps) {
         <div>
           <button onClick={deleteUser} className="button is-danger mt-3">
             Delete
+          </button>
+          </div>
+          <div>
+          <button onClick={updateUser} className="button is-warning mt-3">
+            Update
           </button>
           </div>
         </div>

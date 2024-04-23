@@ -99,6 +99,9 @@ function AllRegions() {
                   <option value="Ireland" disabled>Ireland</option>
                   <option value="Northern Ireland">Northern Ireland</option>
                   <option value="Republic Of Ireland">Republic Of Ireland</option>
+                  <option value="Scotland" disabled>Scotland</option>
+                  <option value="North Scotland">North Scotland</option>
+                  <option value="South Scotland">South Scotland</option>
                 </select>
               </div>
             </div>

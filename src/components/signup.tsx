@@ -109,7 +109,7 @@ export default function Signup() {
                     <i className="fas fa-envelope"></i>
                   </span>
                   <div className="is-size-7 m-1 has-text-weight-semibold">
-                    Please use be a valid email
+                    Please use a valid email
                   </div>
                   {errorData.email && (
                     <small className="has-text-danger">{errorData.email}</small>
