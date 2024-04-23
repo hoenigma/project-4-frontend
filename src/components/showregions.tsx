@@ -28,7 +28,7 @@ function AllRegions() {
       const resp = await fetch(`${baseUrl}/regions?region_name=${value}`);
       const regionData = await resp.json();
       setRegions(regionData);
-      // console.log(regions);
+      console.log(regions);
     }
     fetchRegion();
   }, [value]);
@@ -70,7 +70,7 @@ function AllRegions() {
 
   return (
     <>
-    <section className="section backgroundTwo m-0" style={{ height: "100vh" }}>
+    <section className="section backgroundTwo m-0">
       
         <div className="columns is-multicolumn">
           <div className="container is-widescreen">
@@ -91,20 +91,24 @@ function AllRegions() {
                   onChange={handleRegionChange}
                 >
                   <option value={""}>Select Region</option>
+                  <option value="England" disabled>England</option>
                   <option value="South West England">SW England</option>
                   <option value="South East England">SE England</option>
                   <option value="North West England">NW England</option>
                   <option value="North East England">NE England</option>
+                  <option value="Ireland" disabled>Ireland</option>
+                  <option value="Northern Ireland">Northern Ireland</option>
+                  <option value="Republic Of Ireland">Republic Of Ireland</option>
                 </select>
               </div>
             </div>
           </div>
         </div>
-        <div className="container">
+       <div className="container" style={{ minHeight: "calc(100vh - 200px)" }}>
           <div className="columns is-multiline">
-            {filterRegions()?.map((region) => {
-              return <RegionCards key={region.id} {...region} />;
-            })}
+            {filterRegions()?.map((region) => (
+              <RegionCards key={region.id} {...region} />
+            ))}
           </div>
         </div>
       </section>
