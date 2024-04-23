@@ -122,7 +122,7 @@ function UserPage({ user, setUser }: NavbarProps) {
           <button onClick={deleteUser} className="button is-danger mt-3">
             Delete
           </button>
-          <button onClick={updateUser} className="button is-warning mt-3">
+          <button onClick={updateUser} className="button is-warning mt-3 ml-3">
             Update
           </button>
           </div>
