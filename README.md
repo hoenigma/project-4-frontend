@@ -172,7 +172,7 @@ The eight day was deployment day. Preparations were made alongside further refin
 
 The last day was about finalising the project with additional styling, ensuring consistency across components, and addressing any remaining issues. Features like a form for contacting the developer were added, and extensive styling adjustments were made to various components for a polished final product.
 
-## Challanges
+## Challenges
 
 During the start of the project, I had trouble understanding 1 to many relationships and how to implement them. This was achieved by going through my class notes and discussing this with other colleagues to understand what this relationship is. Doing this early in my project made it easier to understand how my models would interact with each other and how to work them in the front end.
 
@@ -200,7 +200,7 @@ One component I was proud of was my RegionCards component. I had to get certaijn
 
 This code efficiently renders region cards, dynamically displaying information about each region, such as its name, image, and areas.
 
-## Key Learning
+## Key Learnings
 
 During this project, I primarily utilized Express.js for the backend and Axios for making HTTP requests from the frontend. Initially, I encountered challenges in establishing the connection between the frontend and backend. However, I successfully resolved these issues by ensuring that I used the full URL of the localhost in my Axios requests, which allowed seamless communication between the two layers of the application.
 
